@@ -16,22 +16,37 @@ export default function Footer() {
                 Nexo Tech IT
               </span>
             </Link>
-            <p className="text-slate-600 font-medium">We code your vision.</p>
+            <p className="text-slate-600 font-medium">
+              We build solutions, not just websites.
+            </p>
             <p className="text-slate-500 text-sm leading-relaxed">
-              Nexo Tech IT is a software agency building powerful digital solutions
-              for businesses worldwide. Serving clients in USA, UK, Europe & Canada.
+              NexoTech IT is a dedicated digital agency helping shop owners,
+              educators, and startups succeed online. We turn your daily
+              business problems into simple, automated digital tools.
             </p>
             <div className="flex items-center gap-4 pt-2">
-              <Link href="#" className="text-slate-400 hover:text-primary transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-primary transition-colors"
+              >
                 <Globe className="w-5 h-5" />
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-primary transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-primary transition-colors"
+              >
                 <MessageSquare className="w-5 h-5" />
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-primary transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-primary transition-colors"
+              >
                 <Share2 className="w-5 h-5" />
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-primary transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-primary transition-colors"
+              >
                 <Mail className="w-5 h-5" />
               </Link>
             </div>
@@ -44,22 +59,34 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               <li>
-                <Link href="/products#school-ms" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/products#school-ms"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   School Management System
                 </Link>
               </li>
               <li>
-                <Link href="/products#lms" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/products#lms"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   Learning Management System
                 </Link>
               </li>
               <li>
-                <Link href="/products#ecommerce" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/products#ecommerce"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   E-Commerce Platform
                 </Link>
               </li>
               <li>
-                <Link href="/products#inventory" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/products#inventory"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   Inventory Management System
                 </Link>
               </li>
@@ -73,32 +100,50 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               <li>
-                <Link href="/about" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/about"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/services"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/portfolio"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/pricing"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/blog"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-500 hover:text-primary transition-colors text-sm">
+                <Link
+                  href="/contact"
+                  className="text-slate-500 hover:text-primary transition-colors text-sm"
+                >
                   Contact
                 </Link>
               </li>
@@ -112,19 +157,27 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               <li className="text-slate-500 text-sm">
-                <span className="font-medium text-slate-700 block mb-1">Email:</span>
-                hello@nexotechit.com
+                <span className="font-medium text-slate-700 block mb-1">
+                  Email:
+                </span>
+                contact@nexotechit.com
               </li>
               <li className="text-slate-500 text-sm">
-                <span className="font-medium text-slate-700 block mb-1">Website:</span>
+                <span className="font-medium text-slate-700 block mb-1">
+                  Website:
+                </span>
                 nexotechit.com
               </li>
               <li className="text-slate-500 text-sm">
-                <span className="font-medium text-slate-700 block mb-1">Response:</span>
+                <span className="font-medium text-slate-700 block mb-1">
+                  Response:
+                </span>
                 Within 24 hours
               </li>
               <li className="text-slate-500 text-sm mt-6">
-                <span className="font-medium text-slate-700 block mb-2">Payments Accepted:</span>
+                <span className="font-medium text-slate-700 block mb-2">
+                  Payments Accepted:
+                </span>
                 Wise · Payoneer · Crypto
               </li>
             </ul>
@@ -137,10 +190,16 @@ export default function Footer() {
             © {new Date().getFullYear()} Nexo Tech IT. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-slate-500 hover:text-primary transition-colors text-sm">
+            <Link
+              href="#"
+              className="text-slate-500 hover:text-primary transition-colors text-sm"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="text-slate-500 hover:text-primary transition-colors text-sm">
+            <Link
+              href="#"
+              className="text-slate-500 hover:text-primary transition-colors text-sm"
+            >
               Terms of Service
             </Link>
           </div>

@@ -1,17 +1,10 @@
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { blogsData } from "@/constants/blogs";
 
 export default function BlogPage() {
-  const posts = [
-    { title: "The Future of E-Commerce in 2026", category: "E-Commerce", date: "May 1, 2026", readTime: "5 min read", desc: "Discover the latest trends shaping the future of online retail." },
-    { title: "Why Custom Software Beats Off-The-Shelf", category: "Technology", date: "Apr 28, 2026", readTime: "7 min read", desc: "An in-depth look at the long-term ROI of building custom software solutions." },
-    { title: "Securing Your Digital Assets in a Cloud-First World", category: "Security", date: "Apr 15, 2026", readTime: "6 min read", desc: "Best practices for maintaining data security when scaling your infrastructure." },
-    { title: "How LMS Platforms are Revolutionizing Corporate Training", category: "E-Learning", date: "Apr 2, 2026", readTime: "4 min read", desc: "Learn how modern learning management systems increase employee retention." },
-    { title: "Maximizing Efficiency with Smart Inventory Management", category: "Operations", date: "Mar 20, 2026", readTime: "8 min read", desc: "Reduce stockouts and overstock with automated inventory tracking." },
-    { title: "Choosing the Right Tech Stack for Your Startup", category: "Development", date: "Mar 10, 2026", readTime: "10 min read", desc: "A comprehensive guide to selecting the best technologies for your next big idea." },
-  ];
-
   return (
     <div className="pt-24 pb-20 bg-slate-50 min-h-screen">
       <section className="bg-white py-20 border-b border-slate-200">
@@ -28,21 +21,29 @@ export default function BlogPage() {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post, i) => (
-              <Reveal key={i} delay={0.1 * i} className="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 flex flex-col">
-                <div className="aspect-[16/9] bg-slate-100 flex items-center justify-center text-slate-400 relative overflow-hidden">
-                  Blog Image Placeholder
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
-                </div>
+            {blogsData.map((post, i) => (
+              <Reveal key={post.slug} delay={0.1 * i} className="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 flex flex-col hover:shadow-lg transition-shadow">
+                <Link href={`/blog/${post.slug}`} className="aspect-[16/9] bg-slate-100 block relative overflow-hidden">
+                  <Image 
+                    src={post.image} 
+                    alt={post.title} 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                </Link>
                 <div className="p-8 flex-1 flex flex-col">
                   <div className="flex items-center gap-4 text-xs font-medium text-slate-500 mb-4">
                      <span className="text-primary font-bold uppercase tracking-wider">{post.category}</span>
                      <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
                      <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h3>
+                  <Link href={`/blog/${post.slug}`}>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h3>
+                  </Link>
                   <p className="text-slate-600 text-sm flex-1 mb-6">{post.desc}</p>
-                  <Link href="#" className="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:gap-3 transition-all mt-auto">
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:gap-3 transition-all mt-auto">
                     Read Article <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

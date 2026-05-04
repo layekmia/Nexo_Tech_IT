@@ -21,9 +21,9 @@ export default function ContactPage() {
           {/* Left Column */}
           <div>
             <Reveal>
-              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Let's Build Something Great Together</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Let's Solve Your Business Headaches</h1>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-                Whether you need a custom software solution or want to deploy one of our ready-made products, our team is ready to help you succeed.
+                Whether you need to automate your Facebook orders, manage your school, or launch an online store, we are here to help. Tell us what you need, in plain English.
               </p>
 
               <div className="space-y-6 mb-12">
@@ -41,8 +41,8 @@ export default function ContactPage() {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900">Global Presence</h4>
-                    <p className="text-slate-600">Serving clients in USA, UK, Europe & Canada</p>
+                    <h4 className="font-bold text-slate-900">Location</h4>
+                    <p className="text-slate-600">Based in Sylhet, Bangladesh. Helping businesses everywhere.</p>
                   </div>
                 </div>
               </div>
@@ -52,10 +52,10 @@ export default function ContactPage() {
                 <div className="w-16 h-16 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Book a Free Consultation</h3>
-                <p className="text-slate-500 text-sm mb-6">Schedule a 15-minute call with our experts.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Book a Free Chat</h3>
+                <p className="text-slate-500 text-sm mb-6">Schedule a friendly, no-pressure call with us to discuss your goals.</p>
                 <button className="bg-slate-900 text-white px-8 py-3 rounded-full font-medium w-full hover:bg-slate-800 transition-colors">
-                  Open Calendly
+                  Schedule a Call
                 </button>
               </div>
             </Reveal>
@@ -72,64 +72,59 @@ export default function ContactPage() {
                     <Send className="w-8 h-8" />
                   </div>
                   <h4 className="text-xl font-bold mb-2">Message Sent Successfully!</h4>
-                  <p>Thank you for reaching out. We will get back to you within 24 hours.</p>
+                  <p>Thank you for reaching out. We will get back to you shortly.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-semibold text-slate-700">Full Name</label>
-                      <input required type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="John Doe" />
+                      <input required type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Your Name" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-semibold text-slate-700">Email Address</label>
-                      <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="john@company.com" />
+                      <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="your@email.com" />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-slate-700">Company</label>
-                      <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Your Company" />
+                      <label className="text-sm font-semibold text-slate-700">Business / Shop Name</label>
+                      <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Your Business" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-slate-700">Country</label>
-                      <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
-                        <option>United States</option>
-                        <option>United Kingdom</option>
-                        <option>Canada</option>
-                        <option>Europe</option>
-                        <option>Other</option>
-                      </select>
+                      <label className="text-sm font-semibold text-slate-700">WhatsApp / Phone</label>
+                      <input type="tel" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Your WhatsApp number" />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-slate-700">Service Interested In</label>
+                      <label className="text-sm font-semibold text-slate-700">How can we help?</label>
                       <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
-                        <option>School Management System</option>
-                        <option>Learning Management System</option>
-                        <option>E-Commerce Platform</option>
-                        <option>Inventory Management System</option>
-                        <option>Custom Software Development</option>
-                        <option>Other</option>
+                        <option>Professional Business Website</option>
+                        <option>E-Commerce / Online Store</option>
+                        <option>F-Commerce Website Upgrade</option>
+                        <option>School / LMS Platform</option>
+                        <option>Inventory Management</option>
+                        <option>Custom Software Tool</option>
+                        <option>Just Exploring Options</option>
                       </select>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-slate-700">Budget Range</label>
+                      <label className="text-sm font-semibold text-slate-700">Project Timeline</label>
                       <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
-                        <option>Less than $1,000</option>
-                        <option>$1,000 - $5,000</option>
-                        <option>$5,000 - $10,000</option>
-                        <option>$10,000+</option>
+                        <option>As soon as possible</option>
+                        <option>Within 1 Month</option>
+                        <option>1-3 Months</option>
+                        <option>Just researching for now</option>
                       </select>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-700">Message</label>
-                    <textarea required rows={4} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Tell us about your project requirements..."></textarea>
+                    <label className="text-sm font-semibold text-slate-700">Tell us about your business</label>
+                    <textarea required rows={4} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="What are your current daily challenges?"></textarea>
                   </div>
 
                   <button type="submit" className="w-full bg-primary text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-primary/90 transition-all shadow-md flex items-center justify-center gap-2">
