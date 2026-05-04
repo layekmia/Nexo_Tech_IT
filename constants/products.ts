@@ -1,81 +1,87 @@
 export type Product = {
   id: string;
-  category: string;
-  categoryStyles: string;
+  logoText: string;
+  logoIconColor: string; 
   title: string;
   description: string;
-  features: string[];
   link: string;
-  image?: string;
+  image: string;
+  bgColor: string;
+  btnColor: string;
+  btnHoverColor: string;
 };
 
 export const productsData: Product[] = [
   {
-    id: "school-management",
-    category: "School Administration",
-    categoryStyles: "bg-blue-100 text-blue-700",
-    title: "School Management System",
-    description: "A centralized digital solution that streamlines student enrollment, class management, attendance tracking, exam results, and administrative tasks with secure role-based access control.",
-    features: [
-      "Student & Teacher Management",
-      "Attendance & Timetable System",
-      "Fee Collection & Invoicing",
-      "Exam & Grade Management",
-      "Parent Communication Portal",
-      "Reports & Analytics Dashboard",
-    ],
-    link: "/contact",
-    image: "/products/school_MS.png",
-  },
-  {
     id: "lms",
-    category: "Online Education",
-    categoryStyles: "bg-purple-100 text-purple-700",
-    title: "Learning Management System (LMS)",
-    description: "Build, market, and sell online courses, memberships, and digital products from a single platform. Deliver engaging learning experiences with video lessons, quizzes, Pdf document,  and automated certificates. Perfect for educators, coaches, and training companies worldwide.",
-    features: [
-      "Course Creation & Management",
-      "Video Lessons & Pdf document",
-      "Student Progress Tracking",
-      "Automated Certificates",
-      "Built-in Payment Gateway",
-      "Mobile-Friendly Learning App",
-    ],
-    link: "/contact",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2000&auto=format&fit=crop",
+    logoText: "eduflow",
+    logoIconColor: "bg-[#5f5cf3]", // purple
+    title: "The All-in-one Learning Management System",
+    description: "Build, market, and sell online courses, memberships, communities, coaching, and digital products from a single platform.",
+    link: "https://eduflow.nexotechit.com/",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2400&auto=format&fit=crop", // Placeholder
+    bgColor: "bg-[#e0dffe]",
+    btnColor: "bg-[#5f5cf3]",
+    btnHoverColor: "hover:bg-[#4b48d6]",
   },
   {
-    id: "ecommerce",
-    category: "Online Commerce",
-    categoryStyles: "bg-green-100 text-green-700",
-    title: "E-Commerce Platform",
-    description: "Launch your complete online store and start selling globally within days. Manage products, process payments, track orders, and grow your business with powerful built-in analytics. Designed for retailers and brands in USA, UK, and Europe.",
-    features: [
-      "Product & Inventory Management",
-      "Secure Multi-Currency Payments",
-      "Order Tracking & Management",
-      "Sales Analytics Dashboard",
-      "Discount & Coupon System",
-      "Mobile-Optimized Storefront",
-    ],
-    link: "/contact",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop",
+    id: "school-management",
+    logoText: "smartschool",
+    logoIconColor: "bg-[#0ea5e9]", // light blue
+    title: "Complete School Administration Portal",
+    description: "A centralized digital solution that streamlines student enrollment, class management, attendance tracking, and administrative tasks.",
+    link: "https://smartschool1.vercel.app/",
+    image: "/products/school_MS.png",
+    bgColor: "bg-[#e0f2fe]",
+    btnColor: "bg-[#0ea5e9]",
+    btnHoverColor: "hover:bg-[#0284c7]",
   },
   {
-    id: "inventory",
-    category: "Business Operations",
-    categoryStyles: "bg-orange-100 text-orange-700",
-    title: "Inventory Management System",
-    description: "Take complete control of your stock, suppliers, and supply chain with our smart inventory platform. Get real-time stock alerts, manage multiple locations, track purchase orders, and make data-driven decisions with powerful reporting tools.",
-    features: [
-      "Real-Time Stock Tracking",
-      "Multi-Location Management",
-      "Supplier & Purchase Orders",
-      "Low Stock Alerts",
-      "Barcode Scanning Support",
-      "Detailed Reports & Analytics",
-    ],
-    link: "/contact",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop",
+    id: "shopcart",
+    logoText: "shopcart",
+    logoIconColor: "bg-[#10b981]", // emerald
+    title: "Powerful E-Commerce Shopping Platform",
+    description: "Launch your multi-vendor marketplace or single-store brand with advanced product tracking, payment gateways, and order management.",
+    link: "https://shopcart.nexotechit.com/",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2400&auto=format&fit=crop", // Placeholder
+    bgColor: "bg-[#dcfce7]",
+    btnColor: "bg-[#10b981]",
+    btnHoverColor: "hover:bg-[#059669]",
   },
+  {
+    id: "softora",
+    logoText: "softora",
+    logoIconColor: "bg-[#6366f1]", // indigo
+    title: "Smart Inventory & POS System",
+    description: "Automate your stock management, track multi-warehouse inventory, and handle retail checkout smoothly with our POS integration.",
+    link: "https://smartsolutation2.vercel.app/",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2400&auto=format&fit=crop", // Placeholder
+    bgColor: "bg-[#e0e7ff]",
+    btnColor: "bg-[#6366f1]",
+    btnHoverColor: "hover:bg-[#4f46e5]",
+  },
+  {
+    id: "natours",
+    logoText: "natours",
+    logoIconColor: "bg-[#f59e0b]", // amber
+    title: "Travel & Tour Booking Engine",
+    description: "Allow customers to discover exciting travel packages, book their trips online, and manage their itineraries seamlessly.",
+    link: "https://natours.nexotechit.com/",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2400&auto=format&fit=crop", // Placeholder
+    bgColor: "bg-[#fef3c7]",
+    btnColor: "bg-[#f59e0b]",
+    btnHoverColor: "hover:bg-[#d97706]",
+  },
+  {
+    id: "wildoasis",
+    logoText: "wildoasis",
+    logoIconColor: "bg-[#f43f5e]", // rose
+    title: "Hotel & Cabin Reservation Management",
+    description: "Take control of your hotel bookings with a visual calendar, room management, and a beautiful front-end experience for guests.",
+    link: "https://wildoasis.nexotechit.com/",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2400&auto=format&fit=crop", // Placeholder
+    bgColor: "bg-[#ffe4e6]",
+    btnColor: "bg-[#f43f5e]",
+    btnHoverColor: "hover:bg-[#e11d48]",
+  }
 ];

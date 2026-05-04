@@ -1,6 +1,7 @@
 import { Products } from "@/components/Products";
 import CtaBanner from "@/components/home/CtaBanner";
 import Hero from "@/components/home/Hero";
+import Stats from "@/components/home/Stats";
 import Services from "@/components/home/Services";
 import Team from "@/components/home/Team";
 import TestiMonials from "@/components/home/TestiMonials";
@@ -10,9 +11,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Stats />
+      <Products />
       <Services />
       <WhyChoose />
-      <Products />
       <Team />
       <TestiMonials />
       <CtaBanner />

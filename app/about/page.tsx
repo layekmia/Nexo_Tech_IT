@@ -7,8 +7,9 @@ export default function AboutPage() {
       <section className="bg-slate-50 py-20 border-b border-slate-200">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl text-center">
           <Reveal>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              About Nexotech IT
+            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+              Built on Belief. 
+Driven by Possibility.
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               We are a dedicated team of software developers focused on one simple mission: making premium digital solutions accessible and understandable for everyday businesses.

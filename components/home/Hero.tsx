@@ -1,65 +1,123 @@
 import Link from "next/link";
 import React from "react";
 import { Reveal } from "../Reveal";
+import { Globe, Box, Lightbulb, Code, Sparkle } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#4f9cf9] via-[#5aa6f8] to-slate-50 pt-36 pb-24 md:pt-40 md:pb-32">
-      {/* Soft Grid Background (lighter & modern) */}
-      <div
-        className="absolute inset-0 opacity-[0.08]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.6) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#4a9cf5] to-[#e1f0ff] pt-32 pb-20 md:pt-40 md:pb-24 font-tight text-center min-h-[90vh] flex flex-col justify-center">
+      {/* Background Arch & Grid */}
+      <div className="absolute inset-0 z-0 flex items-end justify-center pointer-events-none overflow-hidden">
+        {/* Soft Grid */}
+        <div
+          className="absolute inset-0 opacity-[0.12]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        {/* Glowing Arch */}
+        <div className="absolute w-[150%] md:w-[100%] aspect-square border-t border-white/40 rounded-full translate-y-[55%] shadow-[0_-30px_80px_rgba(255,255,255,0.5)] bg-gradient-to-b from-white/20 to-transparent"></div>
+      </div>
 
-      {/* Floating Glow Blobs */}
-      <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-white/20 blur-3xl rounded-full" />
-      <div className="absolute bottom-[-120px] right-[-120px] w-[320px] h-[320px] bg-blue-200/30 blur-3xl rounded-full" />
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 md:px-8 max-w-5xl text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 max-w-7xl flex flex-col items-center">
+        {/* Top Badge */}
         <Reveal>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 text-white text-sm font-semibold mb-6 backdrop-blur-md border border-white/20">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          <div className="bg-white rounded-full py-1.5 pl-5 pr-1.5 flex items-center gap-4 shadow-sm border border-white/60 mb-10 mx-auto w-fit">
+            <span className="text-slate-800 font-bold text-xl tracking-wide">
+              Our Products
             </span>
-            Built real systems for growing businesses
+            <div className="flex -space-x-2">
+              <div className="w-7 h-7 rounded-full bg-[#525CEB] border-2 border-white flex items-center justify-center shadow-sm">
+                <Globe className="w-3.5 h-3.5 text-white" />
+              </div>
+              <div className="w-7 h-7 rounded-full bg-[#9B51E0] border-2 border-white flex items-center justify-center shadow-sm">
+                <Box className="w-3.5 h-3.5 text-white" />
+              </div>
+              <div className="w-7 h-7 rounded-full bg-[#F2994A] border-2 border-white flex items-center justify-center shadow-sm">
+                <Lightbulb className="w-3.5 h-3.5 text-white" />
+              </div>
+              <div className="w-7 h-7 rounded-full bg-[#00B8D9] border-2 border-white flex items-center justify-center shadow-sm">
+                <Code className="w-3.5 h-3.5 text-white" />
+              </div>
+            </div>
           </div>
         </Reveal>
+
         {/* Heading */}
-        <h1 className="text-4xl md:text-6xl lg:text-[72px] font-extrabold tracking-tight text-white leading-tight">
-          Grow Your Business with Digital Solutions That Actually Work
-        </h1>
+        <Reveal delay={0.1}>
+          <div className="relative inline-block w-full px-4">
+            {/* Sparkles */}
+            <Sparkle
+              className="absolute -left-6 md:-left-12 top-[60%] md:top-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 text-white/50"
+              strokeWidth={1}
+            />
+            <Sparkle
+              className="absolute -right-2 md:-right-8 top-0 md:-top-4 w-6 h-6 md:w-10 md:h-10 text-white/70"
+              strokeWidth={1}
+            />
+
+            <h1 className="text-[40px] leading-[1.1] sm:text-5xl md:text-[80px] font-bold text-white tracking-tight mb-8 drop-shadow-sm">
+              We Build Systems That Power <br className="hidden md:block" />
+              Creators and Businesses
+            </h1>
+          </div>
+        </Reveal>
 
         {/* Subtext */}
-        <p className="mt-8 text-lg md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-          {/* We design and build scalable digital products that help people
-            launch, grow, and automate their online businesses globally. */}
-          At Nexotech IT, we build custom websites, online stores, and software
-          systems that solve real problems, save you time, and help you reach
-          more customers
-        </p>
+        <Reveal delay={0.2}>
+          <p className="text-lg md:text-[22px] text-[#101828] font-normal max-w-4xl mx-auto leading-relaxed mb-12 px-2">
+            We've built products from the ground up and have empowered customers{" "}
+            <br className="hidden md:block" />
+            across the world to start their dream business online.
+          </p>
+        </Reveal>
 
         {/* Buttons */}
-        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#products"
-            className="px-10 py-4 rounded-full bg-white text-slate-800 font-semibold shadow-lg hover:scale-105 transition-transform"
-          >
-            Explore Our Work
-          </a>
+        <Reveal delay={0.3}>
+          <div className="flex flex-row gap-4 justify-center items-center mb-8 w-full">
+            <a
+              href="#products"
+              className="w-40 py-3.5 bg-white text-slate-800 rounded-full font-bold shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.1)] hover:scale-105 transition-all text-center"
+            >
+              Products
+            </a>
+            <Link
+              href="/about"
+              className="w-40 py-3.5 bg-[#479bf4] text-white rounded-full font-bold shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),0_4px_14px_0_rgba(71,155,244,0.4)] hover:bg-[#3b87dc] hover:scale-105 transition-all text-center"
+            >
+              About
+            </Link>
+          </div>
+        </Reveal>
 
-          <Link
-            href="/about"
-            className="px-10 py-4 rounded-full border border-white/40 text-white font-semibold backdrop-blur-md bg-blue-500 hover:bg-blue-600 transition"
-          >
-            About Us
-          </Link>
-        </div>
+        {/* Trust Badges */}
+        <Reveal delay={0.4}>
+          <p className="text-2xl font-bold text-slate-900 mb-8 tracking-wide">
+            Empowering thousands of creators worldwide
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 transition-all duration-500 pt-4">
+            {/* Mocked Logos similar to the image */}
+            <span className="font-extrabold text-3xl md:text-4xl tracking-tighter text-[#1f3a93] flex items-center">
+              Grow<span className="text-[#f1c40f]">Fast</span>
+            </span>
+            <span className="font-bold text-2xl md:text-3xl tracking-tight flex items-center gap-3">
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-[#27ae60] rounded-sm transform rotate-45 flex items-center justify-center shadow-sm">
+                <div className="w-4 h-4 md:w-5 md:h-5 bg-white rounded-full"></div>
+              </div>{" "}
+              CAPSTIA
+            </span>
+            <span className="font-bold text-2xl md:text-3xl tracking-tight flex items-center gap-1">
+              <span className="text-[#e67e22] text-3xl md:text-4xl">i</span>
+              Careers
+            </span>
+            <span className="font-bold text-2xl md:text-3xl tracking-tight flex items-center gap-2">
+              <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-purple-500 to-orange-500 shadow-sm"></div>{" "}
+              EDU<span className="text-slate-700 font-light">LIGHT</span>
+            </span>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

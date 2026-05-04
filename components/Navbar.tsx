@@ -16,12 +16,11 @@ const productLinks = [
     name: "Wildoasis Hotel Management",
     href: "https://wildoasis.nexotechit.com/",
   },
-  { name: "View All Products \u2192", href: "/products", isViewAll: true },
 ];
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Products", href: "/products", hasDropdown: true },
+  { name: "Products", href: "#", hasDropdown: true },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "Blog", href: "/blog" },
@@ -30,6 +29,9 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(
+    null,
+  );
   const pathname = usePathname();
 
   useEffect(() => {
@@ -41,13 +43,13 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 md:px-8">
+    <header className="fixed top-2 left-0 right-0 z-50 flex justify-center px-4 md:px-8">
       <div
-        className={`w-full max-w-7xl rounded-full transition-all duration-300 flex items-center justify-between px-6 py-3 md:px-8 md:py-4 bg-blue-50/70 backdrop-blur-md shadow-lg shadow-blue-900/5 border border-white/20`}
+        className={`w-full max-w-7xl rounded-full transition-all duration-300 flex items-center justify-between px-4 py-2 md:px-5  bg-blue-50/60 backdrop-blur-md shadow-lg shadow-blue-900/5 border border-white/20`}
       >
         {/* Left: Logo + Brand + Tagline */}
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           onClick={(e) => {
             if (pathname === "/") {
               e.preventDefault();
@@ -61,8 +63,8 @@ export default function Navbar() {
             <Zap className="w-8 h-8 fill-primary" />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-tight text-slate-900 leading-none">
-              Nexo Tech IT
+            <span className="text-xl font-black tracking-tight text-slate-950 leading-none">
+              NexoTechIT
             </span>
             <span className="text-[10px] font-semibold tracking-widest text-slate-600 mt-1 uppercase">
               We Code Your Dreams
@@ -76,8 +78,8 @@ export default function Navbar() {
             <div key={link.name} className="relative group py-2">
               <Link
                 href={link.href}
-                className={`text-[15px] font-medium transition-colors hover:text-primary flex items-center gap-1 ${
-                  pathname === link.href ? "text-primary" : "text-slate-700"
+                className={`text-base font-medium transition-colors hover:text-primary flex items-center gap-1 ${
+                  pathname === link.href ? "text-primary" : "text-black/90"
                 }`}
               >
                 {link.name}
@@ -92,12 +94,8 @@ export default function Navbar() {
                     <Link
                       key={pLink.name}
                       href={pLink.href}
-                      target={pLink.isViewAll ? "_self" : "_blank"}
-                      className={`px-5 py-2.5 text-[15px] hover:text-primary hover:bg-slate-50 transition-colors ${
-                        pLink.isViewAll
-                          ? "mt-2 pt-3 border-t border-slate-100 font-semibold text-primary"
-                          : "text-slate-600"
-                      }`}
+                      target="_blank"
+                      className="px-5 py-2.5 text-base hover:text-primary hover:bg-slate-50 transition-colors text-black/90"
                     >
                       {pLink.name}
                     </Link>
@@ -110,7 +108,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-slate-700 p-2 hover:bg-white/20 rounded-full transition-colors"
+          className="md:hidden text-black/90 p-2 hover:bg-white/20 rounded-full transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
@@ -136,32 +134,39 @@ export default function Navbar() {
                 <div key={link.name} className="flex flex-col">
                   <Link
                     href={link.href}
-                    onClick={() =>
-                      !link.hasDropdown && setIsMobileMenuOpen(false)
-                    }
+                    onClick={(e) => {
+                      if (link.hasDropdown) {
+                        e.preventDefault();
+                        setOpenMobileDropdown(
+                          openMobileDropdown === link.name ? null : link.name,
+                        );
+                      } else {
+                        setIsMobileMenuOpen(false);
+                      }
+                    }}
                     className={`text-lg font-medium py-2 flex items-center justify-between ${
-                      pathname === link.href ? "text-primary" : "text-slate-700"
+                      pathname === link.href ? "text-primary" : "text-black/90"
                     }`}
                   >
                     {link.name}
                     {link.hasDropdown && (
-                      <ChevronDown className="w-5 h-5 text-slate-400" />
+                      <ChevronDown
+                        className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${
+                          openMobileDropdown === link.name ? "rotate-180" : ""
+                        }`}
+                      />
                     )}
                   </Link>
 
-                  {link.hasDropdown && (
+                  {link.hasDropdown && openMobileDropdown === link.name && (
                     <div className="flex flex-col pl-4 mt-2 mb-2 space-y-1 border-l-2 border-slate-100">
                       {productLinks.map((pLink) => (
                         <Link
                           key={pLink.name}
                           href={pLink.href}
-                          target={pLink.isViewAll ? "_self" : "_blank"}
+                          target="_blank"
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`py-2 text-[15px] ${
-                            pLink.isViewAll
-                              ? "text-primary font-semibold mt-2 border-t border-slate-50 pt-3"
-                              : "text-slate-600"
-                          }`}
+                          className="py-2 text-[15px] text-slate-600"
                         >
                           {pLink.name}
                         </Link>

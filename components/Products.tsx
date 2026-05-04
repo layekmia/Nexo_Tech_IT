@@ -1,86 +1,77 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { productsData } from "@/constants/products";
 
 export const Products = () => {
   return (
-    <section className="py-24 bg-slate-50" id="products">
+    <section className="py-24 bg-white font-tight" id="products">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <Reveal className="text-center mb-16">
-          <span className="text-primary font-semibold tracking-wider uppercase text-sm mb-2 block">
-            Our Portfolio
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-            Custom Digital Solutions Helping
-            <br /> Businesses Grow Every Day
+        <Reveal className="text-center mb-20 flex flex-col items-center">
+          {/* Gradient Border Badge */}
+          <div className="mx-auto w-fit p-[1px] rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 mb-8">
+            <div className="bg-slate-50 px-8 py-2 rounded-full">
+              <span className="text-slate-900 font-semibold text-[15px]">Our Products</span>
+            </div>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-black text-slate-800 tracking-tight leading-[1.15]">
+            Our Products Successfully Serving <br className="hidden md:block" /> Customers 
           </h2>
         </Reveal>
 
-        <div className="space-y-24">
+        <div className="flex flex-col gap-16">
           {productsData.map((product, index) => {
-            const isEven = index % 2 !== 0; // 0-indexed: 0 is odd in visual layout, 1 is even. Wait, index 0 is first product, so visually "odd". Let's stick to index 0, 2, 4 being the first layout, index 1, 3, 5 being second layout.
-
             return (
-              <div
-                key={product.id}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-              >
-                {/* Content Side */}
-                <Reveal
-                  direction={isEven ? "left" : "right"}
-                  className={`order-2 ${isEven ? "lg:order-2" : "lg:order-1"}`}
+              <Reveal key={product.id} delay={0.1}>
+                <div
+                  className={`flex flex-col lg:flex-row items-center justify-between p-6 md:p-10 lg:p-12 rounded-3xl gap-8 lg:gap-12 mx-auto max-w-6xl ${product.bgColor}`}
                 >
-                  <span
-                    className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-4 ${product.categoryStyles}`}
-                  >
-                    {product.category}
-                  </span>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">
-                    {product.title}
-                  </h3>
-                  <p className="text-slate-600 mb-6 text-lg">
-                    {product.description}
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {product.features.map((feat, i) => (
-                      <li
-                        key={i}
-                        className="flex items-center gap-3 text-slate-700 font-medium"
-                      >
-                        <CheckCircle2 className="w-5 h-5 text-primary" /> {feat}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={product.link}
-                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-colors"
-                  >
-                    Request a Demo &rarr;
-                  </Link>
-                </Reveal>
+                  {/* Content Side */}
+                  <div className="w-full lg:w-1/2 flex flex-col items-start">
+                    {/* Logo Mockup */}
+                    <div className="flex items-center gap-2.5 mb-6">
+                      <div className="flex -space-x-1 transform rotate-12">
+                        <div className={`w-2 h-4 rounded-sm ${product.logoIconColor}`}></div>
+                        <div className={`w-2 h-4 rounded-sm ${product.logoIconColor} opacity-80 -translate-y-1.5`}></div>
+                        <div className={`w-2 h-4 rounded-sm ${product.logoIconColor} opacity-60 translate-y-1.5`}></div>
+                      </div>
+                      <span className="font-extrabold text-lg text-slate-900 tracking-tight">
+                        {product.logoText}
+                      </span>
+                    </div>
 
-                {/* Image Side */}
-                <Reveal
-                  direction={isEven ? "right" : "left"}
-                  className={`order-1 ${
-                    isEven ? "lg:order-1" : "lg:order-2"
-                  } bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center justify-center w-full`}
-                >
-                  <Image
-                    src={
-                      product.image ||
-                      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
-                    }
-                    alt={product.title}
-                    width={1200}
-                    height={800}
-                    className="w-full h-auto rounded-xl border border-slate-100/50"
-                    unoptimized
-                  />
-                </Reveal>
-              </div>
+                    <h3 className="text-3xl md:text-4xl lg:text-[40px] font-extrabold text-slate-950 mb-4 leading-[1.15] tracking-tight">
+                      {product.title}
+                    </h3>
+                    
+                    <p className="text-slate-800/80 text-base md:text-lg leading-relaxed mb-8 max-w-[95%]">
+                      {product.description}
+                    </p>
+
+                    <Link
+                      href={product.link}
+                      target="_blank"
+                      className={`inline-flex items-center justify-center text-white px-8 py-3.5 rounded-full font-bold text-[15px] transition-all shadow-sm hover:shadow-md hover:scale-105 ${product.btnColor} ${product.btnHoverColor}`}
+                    >
+                      Take A Tour
+                    </Link>
+                  </div>
+
+                  {/* Image Side */}
+                  <div className="w-full lg:w-1/2">
+                    <div className="relative w-full aspect-[4/3] rounded-3xl md:rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 border-white/40 overflow-hidden group">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                        unoptimized
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
             );
           })}
         </div>
