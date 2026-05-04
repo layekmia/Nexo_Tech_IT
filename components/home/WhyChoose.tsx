@@ -12,15 +12,17 @@ export default function WhyChoose() {
   return (
     <section className="py-24 bg-slate-50" id="why-choose-us">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <Reveal className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="text-primary font-semibold tracking-wider uppercase text-sm mb-2 block">
-            Why Choose Us
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-We Help You Build Systems That Actually Work for Your Business
+        <Reveal className="text-center mb-16 max-w-3xl mx-auto flex flex-col items-center">
+          <div className="mx-auto w-fit p-[1px] rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 mb-8">
+            <div className="bg-slate-50 px-8 py-2 rounded-full">
+              <span className="text-slate-900 font-semibold text-[15px]">Why Choose Us</span>
+            </div>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-800 tracking-tight leading-[1.15] mb-4">
+            We Help You Build Systems That Actually Work
           </h2>
           <p className="text-slate-600 text-lg">
-           We focus on simple, practical solutions that help you save time, stay organized, and grow your business — without unnecessary complexity.
+            We focus on simple, practical solutions that help you save time, stay organized, and grow your business — without unnecessary complexity.
           </p>
         </Reveal>
 

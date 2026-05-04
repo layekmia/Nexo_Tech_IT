@@ -3,9 +3,9 @@ import CtaBanner from "@/components/home/CtaBanner";
 import Hero from "@/components/home/Hero";
 import Stats from "@/components/home/Stats";
 import Services from "@/components/home/Services";
-import Team from "@/components/home/Team";
-import TestiMonials from "@/components/home/TestiMonials";
+import Team from "@/components/home/Founders";
 import WhyChoose from "@/components/home/WhyChoose";
+import FAQ from "@/components/home/FAQ";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <Services />
       <WhyChoose />
       <Team />
-      <TestiMonials />
+      <FAQ/>
       <CtaBanner />
     </>
   );

@@ -91,33 +91,6 @@ export default function Hero() {
             </Link>
           </div>
         </Reveal>
-
-        {/* Trust Badges */}
-        <Reveal delay={0.4}>
-          <p className="text-2xl font-bold text-slate-900 mb-8 tracking-wide">
-            Empowering thousands of creators worldwide
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 transition-all duration-500 pt-4">
-            {/* Mocked Logos similar to the image */}
-            <span className="font-extrabold text-3xl md:text-4xl tracking-tighter text-[#1f3a93] flex items-center">
-              Grow<span className="text-[#f1c40f]">Fast</span>
-            </span>
-            <span className="font-bold text-2xl md:text-3xl tracking-tight flex items-center gap-3">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-[#27ae60] rounded-sm transform rotate-45 flex items-center justify-center shadow-sm">
-                <div className="w-4 h-4 md:w-5 md:h-5 bg-white rounded-full"></div>
-              </div>{" "}
-              CAPSTIA
-            </span>
-            <span className="font-bold text-2xl md:text-3xl tracking-tight flex items-center gap-1">
-              <span className="text-[#e67e22] text-3xl md:text-4xl">i</span>
-              Careers
-            </span>
-            <span className="font-bold text-2xl md:text-3xl tracking-tight flex items-center gap-2">
-              <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-purple-500 to-orange-500 shadow-sm"></div>{" "}
-              EDU<span className="text-slate-700 font-light">LIGHT</span>
-            </span>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
