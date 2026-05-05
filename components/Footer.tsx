@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#020617] pt-20 pb-10 border-t border-white/10 relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent pointer-events-none"></div>
-      
+
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Column 1 - Brand */}

@@ -32,8 +32,17 @@ export default function ContactPage() {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
+                    <h4 className="font-bold text-slate-900">Whatsapp/phone </h4>
+                    <p className="text-slate-600">+8801613103990</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
                     <h4 className="font-bold text-slate-900">Email Us</h4>
-                    <p className="text-slate-600">hello@nexotechit.com</p>
+                    <p className="text-slate-600">contact@nexotechit.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

@@ -13,8 +13,8 @@ const productLinks = [
   { name: "School MS", href: "https://smartschool1.vercel.app/" },
   { name: "Travel Tour Application", href: "https://natours.nexotechit.com/" },
   {
-    name: "Wildoasis Hotel Management",
-    href: "https://wildoasis.nexotechit.com/",
+    name: "RideX Ride Sharing",
+    href: "https://ridex-ride-sharing.vercel.app/",
   },
 ];
 
